@@ -138,26 +138,28 @@ step-recover-gitea-repositories ()
         done
 
         # Clean the current content of the repository mirror directory and the workspaces directory
-        MIRROR_DIR=recovery
+        MIRROR_DIR=mirrors
         WORKSPACE_DIR=workspaces
         rm -rf ${MIRROR_DIR}
         mkdir -p ${MIRROR_DIR}
         rm -rf ${WORKSPACE_DIR}
         mkdir -p ${WORKSPACE_DIR}
-        info "Extracting files from Gitea backup file \"${GITEA_REPO_BACKUP}.... \""
-        unzip ${GITEA_REPO_BACKUP} || fatal "Extraction of files from Gitea backup file \"${GITEA_REPO_BACKUP}\" failed !"
-        info "Gitea recovery repositories extracted to directory \"mirror\"."
+        info "Extracting Git repositories from backup file \"${GITEA_REPO_BACKUP}\" ...."
+        unzip ${GITEA_REPO_BACKUP} || fatal "Extraction of files from backup file \"${GITEA_REPO_BACKUP}\" failed !"
+        info "Git repositories extracted to directory \"${MIRROR_DIR}\"."
         for MIRROR_REPO in ${PWD}/${MIRROR_DIR}/*/*
         do
-            cd ${WORKSPACE_DIR}
-            info "Cloning repository ${MIRROR_REPO} ...."
+            ORGANIZATION_DIR=${WORKSPACE_DIR}/$(basename $(dirname ${MIRROR_REPO})
+            mkdir -p ${ORGANIZATION_DIR}
+            cd ${ORGANIZATION_DIR}
+            info "Cloning repository ${MIRROR_REPO} into directory ${ORGANIZATION_DIR} ...."
             git clone file://${MIRROR_REPO} || warning "Could not clone repository ${MIRROR_REPO}"
-            info "Repository ${MIRROR_REPO} cloned successfully !!"
+            info "Repository cloned successfully !!"
             text ""
             cd ..
         done
         info "The following repositories were cloned:"
-        ls -l ${WORKSPACE_DIR}
+        ls -ld ${WORKSPACE_DIR}/*
         info "Gitea recovery repositories CLONED into directory \"${WORKSPACE_DIR}\"."
     )
 }
