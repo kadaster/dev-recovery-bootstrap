@@ -149,7 +149,7 @@ step-recover-gitea-repositories ()
         info "Git repositories extracted to directory \"${MIRROR_DIR}\"."
         for MIRROR_REPO in ${PWD}/${MIRROR_DIR}/*/*
         do
-            ORGANIZATION_DIR=${WORKSPACE_DIR}/$(basename $(dirname ${MIRROR_REPO})
+            ORGANIZATION_DIR=${WORKSPACE_DIR}/$(basename $(dirname ${MIRROR_REPO}))
             mkdir -p ${ORGANIZATION_DIR}
             cd ${ORGANIZATION_DIR}
             info "Cloning repository ${MIRROR_REPO} into directory ${ORGANIZATION_DIR} ...."
