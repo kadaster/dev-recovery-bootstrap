@@ -98,8 +98,8 @@ start-with-step ()
         declare -i S=1
         text "Bootstrap steps for recovery of Development Services:"
         text ""
-        text "   $((S++)): Get repository backup file"
-        text "   $((S++)): Extract Gitea Repositories"
+        text "   $((S++)): Obtain the backup file of the Development Services repositories"
+        text "   $((S++)): Extract Git Repositories"
         text "   $((S++)): Recover Development Services"
         text "   ${S}: EXIT"
         text ""
@@ -112,12 +112,10 @@ start-with-step ()
 step-get-repositories-backup-file ()
 {
     print-header "STEP: Get the backup of the Development Services Git repositories"
-    text ""
     text "A current backup of the Development Services Git repositories is required "
     text "to continue. Obtain this backup first and copy it to your local laptop harddrive."
     text ""
-    text -n "Continue (press ENTER) ? "; read CONTINUE
-    text ""
+    execute-step
 }
 
 step-recover-gitea-repositories ()
@@ -169,7 +167,7 @@ step-recover-development-services ()
     print-header "STEP: Recover development services"
     execute-step && 
     (
-            text "Start recovering Development Services" 
+        text "Start recovering Development Services" 
     )
 }
 
@@ -180,11 +178,11 @@ main ()
     # Determine the step to start recovery with (variable START_STEP)
     start-with-step
 
-    # Execute required recovery steps, only 
+    # Execute required recovery steps only 
     [ ${START_STEP} -le $((STEP_NUMBER++)) ] && step-get-repositories-backup-file
-    [ ${START_STEP} -le $((STEP_NUMBER++)) ] && step-recover-gitea-repos
+    [ ${START_STEP} -le $((STEP_NUMBER++)) ] && step-recover-gitea-repositories
     [ ${START_STEP} -le $((STEP_NUMBER++)) ] && step-recover-development-services
-    [ ${START_STEP} -le $((STEP_NUMBER++)) ] && exit
+    [ ${START_STEP} -le $((STEP_NUMBER++)) ] && text ""
 }
 
 # This script starts here ...
