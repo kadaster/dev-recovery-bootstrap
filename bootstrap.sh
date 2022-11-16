@@ -146,6 +146,7 @@ step-recover-gitea-repositories ()
         mkdir -p ${WORKSPACE_DIR}
         info "Extracting Git repositories from backup file \"${GITEA_REPO_BACKUP}\" ...."
         unzip ${GITEA_REPO_BACKUP} || fatal "Extraction of files from backup file \"${GITEA_REPO_BACKUP}\" failed !"
+        mv recovery ${MIRROR_DIR}
         info "Git repositories extracted to directory \"${MIRROR_DIR}\"."
         for MIRROR_REPO in ${PWD}/${MIRROR_DIR}/*/*
         do
