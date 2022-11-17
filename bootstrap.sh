@@ -146,7 +146,7 @@ step-recover-gitea-repositories ()
         rm -rf ${ZIP_DIR}
         info "Extracting Git repositories from backup file \"${GITEA_REPO_BACKUP}\" ...."
         unzip ${GITEA_REPO_BACKUP} || fatal "Extraction of files from backup file \"${GITEA_REPO_BACKUP}\" failed !"
-        mv recovery ${MIRROR_DIR}
+        mv recovery ${MIRROR_DIR}  # zip file contains "recovery" directory as root dir
         info "Git repositories extracted to directory \"${MIRROR_DIR}\"."
         for MIRROR_REPO in ${PWD}/${MIRROR_DIR}/*/*
         do
@@ -157,7 +157,7 @@ step-recover-gitea-repositories ()
             git clone file://${MIRROR_REPO} || warning "Could not clone repository ${MIRROR_REPO}"
             info "Repository cloned successfully !!"
             text ""
-            cd ..
+            cd ../..
         done
         info "The following repositories were cloned:"
         cd ${WORKSPACE_DIR}
