@@ -8,6 +8,7 @@ This Git repository contains a **bootstrap script** to be able to recover Develo
 
 - A laptop running WSL2
 - A Git client
+- Access to https://github.com/kadaster-it/dev-recovery-bootstrap
 
 ## Execution of the bootstrap
 
