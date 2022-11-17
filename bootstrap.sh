@@ -140,10 +140,10 @@ step-recover-gitea-repositories ()
         # Clean the current content of the repository mirror directory and the workspaces directory
         MIRROR_DIR=mirrors
         WORKSPACE_DIR=workspaces
+        ZIP_DIR=recovery
         rm -rf ${MIRROR_DIR}
-        mkdir -p ${MIRROR_DIR}
         rm -rf ${WORKSPACE_DIR}
-        mkdir -p ${WORKSPACE_DIR}
+        rm -rf ${ZIP_DIR}
         info "Extracting Git repositories from backup file \"${GITEA_REPO_BACKUP}\" ...."
         unzip ${GITEA_REPO_BACKUP} || fatal "Extraction of files from backup file \"${GITEA_REPO_BACKUP}\" failed !"
         mv recovery ${MIRROR_DIR}
