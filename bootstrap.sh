@@ -160,7 +160,9 @@ step-recover-gitea-repositories ()
             cd ..
         done
         info "The following repositories were cloned:"
-        ls -ld ${WORKSPACE_DIR}/*
+        cd ${WORKSPACE_DIR}
+        ls -ld -C1 */*
+        cd ..
         info "Gitea recovery repositories CLONED into directory \"${WORKSPACE_DIR}\"."
     )
 }
