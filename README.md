@@ -1,6 +1,8 @@
-# Development Services recovery bootstrap
+# ===> RECOVERY STARTS HERE !!!! <===
 
-This Git repository contains a **bootstrap script** to be able to recover Development Services, e.g. when a successful ransomware attack has taken place. Recovery starts here !!
+## Development Services recovery bootstrap
+
+This Git repository contains a **bootstrap script** to be able to recover Development Services, e.g. when a successful ransomware attack has taken place. 
 
 ## Prerequisites for the bootstrap step
 
