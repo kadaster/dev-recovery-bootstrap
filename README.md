@@ -1,21 +1,22 @@
-# ===> RECOVERY STARTS HERE !!!! <===
+# Development Services recovery bootstrap
 
-## Development Services recovery bootstrap
+Start here to recover Development Services if required. 
 
-This Git repository contains a **bootstrap script** to be able to recover Development Services, e.g. when a successful ransomware attack has taken place. 
+## Prerequisites
 
-## Prerequisites for the bootstrap step
-
-- A laptop running WSL2
+- A laptop running WSL2 (Windows Subsystem for Linux 2)
 - A Git client
-- Access to https://github.com/kadaster-it/dev-recovery-bootstrap
+- Access to this repository.
 
 ## Execution of the bootstrap
 
 Just execute the following commands from a Bash shell and follow the instructions:
 
 ```
-cd ~
+cd
+mkdir recovery
+cd recovery
 git clone https://github.com/kadaster-it/dev-recovery-bootstrap .
+# git may ask for your Github credentials
 ./bootstrap.sh
 ```
