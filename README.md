@@ -1,6 +1,12 @@
 # Development Services recovery bootstrap
 
-Start here to recover Development Services if required.
+Start here to recover Development Services if required. 
+
+⚠👇🏼👇🏼👇🏼👇🏼⚠
+
+This repository is mirrored to https://github.com/kadaster/dev-recovery-bootstrap and necessary in case of a complete disaster and nothing is left. 
+
+IN THAT CASE: START READING THERE !
 
 ## Description
 
@@ -21,7 +27,7 @@ To recover from a disaster you need the latest uncompromised Gitea recovery back
 1. Open a WSL `Bash shell`, you will enter your `homedirectory`.
 1. Get the **latest, uncompromised Gitea recovery backup** file named `recovery-repos-YYYYMMDDhhmm.zip`, from the **Continuity management tooling**, and **place it in directory /tmp**. Currently, there's no description how to obtain such a backup.
 1. Unzip the Gitea recovery backup: `unzip /tmp/recovery-repos-YYYYMMDDhhmm.zip -d /tmp`
-1. Clone the recovery script sources: `git clone file://tmp/recovery/dev/dev-recovery.git recovery`
-1. Start the recovery: `cd recovery; ./recovery.sh`
+1. Clone the recovery script sources: `git clone file://tmp/recovery/dev/dev-recovery.git ~/recovery`
+1. Start the recovery: `cd ~/recovery; ./recovery.sh`
 
 The recovery process encompasses several steps. After the recovery script is started it displays a menu describing the steps of the recovery process. The script can be stopped if necessary and restarted again, skipping steps that have been executed already. 
