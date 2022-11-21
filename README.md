@@ -4,19 +4,17 @@ Start here to recover Development Services if required.
 
 ## Prerequisites
 
-- A laptop running WSL2 (Windows Subsystem for Linux 2)
-- A Git client
-- Access to this repository.
+- A laptop running WSL2 (Windows Subsystem for Linux 2).
+- Git client software
+- Gitea Recovery Backup from Continuity management.
 
-## Execution of the bootstrap
+## How to bootstrap the recovery
 
-Just execute the following commands from a Bash shell and follow the instructions:
+1. Open a WSL `Bash shell`, you will enter your `homedirectory`.
+1. Get the **latest, uncompromised Gitea recovery backup** file named `recovery-repos-YYYYMMDDhhmm.zip`, from the **Continuity management tooling**, and **place it in directory /tmp**.
 
-```
-cd
-mkdir recovery
-cd recovery
-git clone https://github.com/kadaster-it/dev-recovery-bootstrap .
-# git may ask for your Github credentials
-./bootstrap.sh
-```
+Execute the following steps:
+
+1. Unzip the Gitea recovery backup: `unzip /tmp/recovery-repos-YYYYMMDDhhmm.zip -d /tmp`
+1. Clone the recovery script sources: `git clone file://tmp/recovery/dev/dev-recovery.git recovery`
+1. Start the recovery: `cd recovery; ./recovery.sh`
