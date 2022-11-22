@@ -28,6 +28,11 @@ To recover from a disaster you need the latest uncompromised Gitea recovery back
 1. Get the **latest, uncompromised Gitea recovery backup** file named `recovery-repos-YYYYMMDDhhmm.zip`, from the **Continuity management tooling**, and **place it in directory /tmp**. Currently, there's no description how to obtain such a backup.
 1. Unzip the Gitea recovery backup: `unzip /tmp/recovery-repos-YYYYMMDDhhmm.zip -d /tmp`
 1. Clone the recovery script sources: `git clone file://tmp/recovery/dev/dev-recovery.git ~/recovery`
-1. Start the recovery: `cd ~/recovery; ./recovery.sh`
+1. `cd ~/recovery
+1. Start the recovery: `./recovery.sh | tee -a recovery.log`
 
-The recovery process encompasses several steps. After the recovery script is started it displays a menu describing the steps of the recovery process. The script can be stopped if necessary and restarted again, skipping steps that have been executed already. 
+## Note
+- The recovery process encompasses several steps. 
+- After the recovery script is started it displays a menu describing the steps of the recovery process. 
+- The script can be stopped if necessary and restarted again, skipping steps that have been executed already. 
+- Please log the recovery script output by using `tee` and append logging to an existing logfile, especially when you restart the recovery script.
