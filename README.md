@@ -35,4 +35,4 @@ To recover from a disaster you need the latest uncompromised Gitea recovery back
 - The recovery process encompasses several steps. 
 - After the recovery script is started it displays a menu describing the steps of the recovery process. 
 - The script can be stopped if necessary and restarted again, skipping steps that have been executed already. 
-- Please log the recovery script output by using `tee` and append logging to an existing logfile, especially when you restart the recovery script.
+- Please log the recovery script output by using `tee` and append the logging to the `recovery.log`, especially when you restart the recovery script.
