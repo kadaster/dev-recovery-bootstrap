@@ -20,7 +20,7 @@ To recover from a disaster you need the **latest uncompromised Gitea recovery ba
 - The `latest Git client` software
 - The `latest umcompromised Gitea Recovery backup` from Continuity management. GET THIS BACKUP FIRST !
 
-## Execution
+## Usage
 
 1. Open a WSL `Bash shell`, you will enter your `homedirectory`.
 1. Get the **latest, uncompromised Gitea recovery backup** file named `recovery-repos-YYYYMMDDhhmm.zip`, from the **Continuity management tooling**, and **place it in directory /tmp**. 
