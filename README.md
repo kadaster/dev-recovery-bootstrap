@@ -8,7 +8,7 @@ This repository is mirrored to https://github.com/kadaster/dev-recovery-bootstra
 
 ## Description
 
-To recover from a disaster you need the **latest uncompromised Gitea recovery backup **. This backup contains the Git source code repositories (mirror clones) of all Development Services. The recovery bootstrap encompasses:
+To recover from a disaster you need the **latest uncompromised Gitea recovery backup**. This backup contains the Git source code repositories (mirror clones) of all Development Services. The recovery bootstrap encompasses:
 
 1. Unzipping the Gitea recovery backup.
 1. Cloning of the `dev-recovery` repository which is part of the backup. It contains the `recovery.sh` script.
