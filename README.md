@@ -29,7 +29,8 @@ To recover from a disaster you need the **latest uncompromised Gitea recovery ba
 1. `cd ~/recovery`
 1. Start the recovery: `bash recovery.sh | tee -a recovery.log`
 
-## Note
+## Notes
+- The `recovery.sh` expects the unzipped repository mirrors in `/tmp` !! Do not change !!
 - The recovery process encompasses several steps. 
 - After the recovery script is started it displays a menu describing the steps of the recovery process. 
 - The script can be stopped if necessary and restarted again, skipping steps that have been executed already. 
